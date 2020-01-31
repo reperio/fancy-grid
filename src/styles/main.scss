@@ -293,3 +293,7 @@
         color: $reperio-blue !important;
     }
 }
+
+.dropdown-toggle::after {
+    content: none!important;
+}
