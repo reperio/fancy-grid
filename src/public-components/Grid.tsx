@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useCallback, useMemo } from 'react';
+import React, { ReactNode, useState, useCallback, useMemo, ReactElement } from 'react';
 import { ColumnList, getColumnDefinitionsFromColumnListComponent } from './ColumnList';
 import { ColumnDefinition } from '../models/columnDefinition';
 import { PageState } from '../models/pageState';
@@ -18,6 +18,7 @@ import { LoadingSpinner } from '../internal-components/loadingSpinner';
 
 export interface NonReduxGridOnlyProps {
     isLoading?: boolean;
+    children: ReactNode;
 }
 
 export interface IncludingReduxGridProps {

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { ReactNode, useRef} from 'react';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 import {FilterType, FilterTypeDisplays} from '../../models/filterType';
@@ -7,7 +7,8 @@ export interface FilterTypeDropdownButtonProps {
     selectedFilterType: FilterType | null;
     filterTypes: FilterType[];
     onChange: (filterType: FilterType) => void;
-    showCaret?: boolean
+    showCaret?: boolean,
+    children?: ReactNode
 }
 
 export const FilterTypeDropdownButton: React.FunctionComponent<FilterTypeDropdownButtonProps> = props => {

@@ -12,7 +12,8 @@ export type UseFancyGridReturnValue<T> = [T[], number, number, number, SortColle
 
 
 export const useReduxFancyGrid = <T>(gridName: string, dataRetrievalFunction: FancyGridDataRetrievalFunction<T>, additionalTriggers?: any[], jsonDataSelector: (res: any) => T[] = res => res.data, jsonTotalSelector: (res: any) => number = res => res.total): UseFancyGridReturnValue<T> => {
-    const dispatch = useDispatch();
+    // FIXME: workaround for type change, may actually indicate broken code
+    const dispatch = useDispatch() as any;
 
     const gridState = {
         ...useSelector<any, GridState<T>>(state => state.fancyGrid.defaultGridState),

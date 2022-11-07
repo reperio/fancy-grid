@@ -7,4 +7,5 @@ export interface ColumnDefinition {
     tdProps?: React.DetailedHTMLProps<React.TdHTMLAttributes<HTMLTableDataCellElement>, HTMLTableDataCellElement>;
     sortable?: boolean;
     filterable?: boolean | "inline" | "popup";
+    children?: React.ReactElement | ReadonlyArray<React.ReactElement>;
 }
