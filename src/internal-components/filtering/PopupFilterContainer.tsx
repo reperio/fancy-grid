@@ -26,6 +26,12 @@ const PopoverContainer: React.FunctionComponent<PopoverContainerProps> = props =
         props.onClear();
     }
 
+    function keyPressed(event: React.KeyboardEvent) {
+        if (event.key === 'Enter') {
+            submitFilter()
+        }
+    }
+
     return (
         <Popover id="popover-basic">
             <Popover.Body>
@@ -41,7 +47,8 @@ const PopoverContainer: React.FunctionComponent<PopoverContainerProps> = props =
                     name={props.fieldName}
                     placeholder={props.fieldTitle}
                     onChange={(event) => setSelectedValue(event.target.value)}
-                    value={selectedValue} />
+                    value={selectedValue} 
+                    onKeyUp={keyPressed} />
                 <div style={{marginTop: "1rem"}}>
                     <Button variant={'outline-secondary'} onClick={submitFilter}>Filter</Button>
                     <Button variant={'outline-secondary'} onClick={clearFilter}>Clear</Button>
