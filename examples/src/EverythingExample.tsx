@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import FancyGrid from '../../dist';
+import * as FancyGrid from '../../dist';
 
 import usStates from './states.json';
 
