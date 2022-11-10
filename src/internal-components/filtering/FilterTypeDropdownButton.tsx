@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef} from 'react';
+import React, {ReactNode, useRef} from 'react';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 import {FilterType, FilterTypeDisplays} from '../../models/filterType';

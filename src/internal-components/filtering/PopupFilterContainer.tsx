@@ -32,9 +32,7 @@ const PopoverContainer: React.FunctionComponent<PopoverContainerProps> = props =
                 <p>Show items with value that:</p>
                 <div style={{marginBottom: "1rem"}}>
                     <FilterTypeDropdownButton selectedFilterType={selectedFilterType} filterTypes={props.filterTypes} onChange={filterType => setSelectedFilterType(filterType as FilterType)} showCaret={true}>
-                        <>
-                            {FilterTypeDisplays[selectedFilterType]}
-                        </>
+                        {FilterTypeDisplays[selectedFilterType]}
                     </FilterTypeDropdownButton>
                 </div>
                 <input
