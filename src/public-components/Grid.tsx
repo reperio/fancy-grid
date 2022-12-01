@@ -18,6 +18,7 @@ import { LoadingSpinner } from '../internal-components/loadingSpinner';
 
 export interface NonReduxGridOnlyProps {
     isLoading?: boolean;
+    children: ReactNode;
 }
 
 export interface IncludingReduxGridProps {

@@ -1,6 +1,8 @@
 import { FilterCollection } from './../models/filterState';
 import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { AnyAction } from 'redux';
 
 import { SortCollection } from ".."
 import { actionCreators } from './actionCreators';
@@ -12,7 +14,7 @@ export type UseFancyGridReturnValue<T> = [T[], number, number, number, SortColle
 
 
 export const useReduxFancyGrid = <T>(gridName: string, dataRetrievalFunction: FancyGridDataRetrievalFunction<T>, additionalTriggers?: any[], jsonDataSelector: (res: any) => T[] = res => res.data, jsonTotalSelector: (res: any) => number = res => res.total): UseFancyGridReturnValue<T> => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch() as ThunkDispatch<any, undefined, AnyAction>;
 
     const gridState = {
         ...useSelector<any, GridState<T>>(state => state.fancyGrid.defaultGridState),

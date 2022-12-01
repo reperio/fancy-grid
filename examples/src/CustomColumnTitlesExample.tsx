@@ -1,5 +1,5 @@
 import React from 'react';
-import FancyGrid from '../../dist';
+import * as FancyGrid from '../../dist';
 
 export const code = `function CustomColumnTitlesExample() {
     const dataRows = [

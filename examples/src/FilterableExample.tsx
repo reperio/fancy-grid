@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FancyGrid, { FilterType } from '../../dist';
+import * as FancyGrid from '../../dist';
 
 import usStates from './states.json';
 
@@ -90,7 +90,7 @@ export function FilterableExample() {
                     name="abbreviation"
                     title="Abbreviation"/>
             </FancyGrid.ColumnList>
-            <FancyGrid.Filterable filter={filterState} onFilterChange={setFilterState} defaultFilter={FilterType.StartsWith}/>
+            <FancyGrid.Filterable filter={filterState} onFilterChange={setFilterState} defaultFilter={FancyGrid.FilterType.StartsWith}/>
             <FancyGrid.LocalDataSource data={dataRows} />
         </FancyGrid.Grid>
     )

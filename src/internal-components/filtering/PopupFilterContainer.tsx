@@ -28,7 +28,7 @@ const PopoverContainer: React.FunctionComponent<PopoverContainerProps> = props =
 
     return (
         <Popover id="popover-basic">
-            <Popover.Content>
+            <Popover.Body>
                 <p>Show items with value that:</p>
                 <div style={{marginBottom: "1rem"}}>
                     <FilterTypeDropdownButton selectedFilterType={selectedFilterType} filterTypes={props.filterTypes} onChange={filterType => setSelectedFilterType(filterType as FilterType)} showCaret={true}>
@@ -46,7 +46,7 @@ const PopoverContainer: React.FunctionComponent<PopoverContainerProps> = props =
                     <Button variant={'outline-secondary'} onClick={submitFilter}>Filter</Button>
                     <Button variant={'outline-secondary'} onClick={clearFilter}>Clear</Button>
                 </div>
-            </Popover.Content>
+            </Popover.Body>
         </Popover>
     )
 };

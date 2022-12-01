@@ -21,6 +21,6 @@ export function getColumnDefinitionsFromColumnListComponent(columnList: React.Re
     return columnDefinitions;
 }
 
-export const ColumnList: React.FunctionComponent = () => {
+export const ColumnList: React.FunctionComponent<{ children: React.ReactElement | ReadonlyArray<React.ReactElement> }> = () => {
     return null;
 }
