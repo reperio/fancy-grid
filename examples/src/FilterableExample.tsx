@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as FancyGrid from '../../dist';
 
 import usStates from './states.json';
@@ -34,7 +34,15 @@ export const code = `function applyFilter(dataRows: any[], filters: FancyGrid.Fi
 
 export function FilterableExample() {
     const [filterState, setFilterState] = useState([] as FancyGrid.FilterCollection);
-    const dataRows = applyFilter(usStates.data, filterState);
+    const [dataRows, setDataRows] = useState(usStates.data);
+
+    useEffect(() => {
+        const timeout = setTimeout(
+            () => setDataRows(applyFilter(usStates.data, filterState)),
+            250
+        );
+        return () => clearTimeout(timeout);
+    }, [filterState]);
     
     return (
         <FancyGrid.Grid>
@@ -78,8 +86,16 @@ function applyFilter(dataRows: any[], filters: FancyGrid.FilterCollection) {
 
 export function FilterableExample() {
     const [filterState, setFilterState] = useState([] as FancyGrid.FilterCollection);
-    const dataRows = applyFilter(usStates.data, filterState);
-    
+    const [dataRows, setDataRows] = useState(usStates.data);
+
+    useEffect(() => {
+        const timeout = setTimeout(
+            () => setDataRows(applyFilter(usStates.data, filterState)),
+            250
+        );
+        return () => clearTimeout(timeout);
+    }, [filterState]);
+
     return (
         <FancyGrid.Grid>
             <FancyGrid.ColumnList>
